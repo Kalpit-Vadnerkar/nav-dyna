@@ -3,7 +3,9 @@ clear; close all;
 
 % Load bike parameters and initial velocities
 BIKEPRE;  % Load the bike parameters
-initial_velocities = [3:3:15];  % Define initial velocities
+c_values_array = [0:25:201]; % Acceleration magnitudes 
+theta_values_array = (1:0.1:10.1) * pi/180;  % Steering magnitudes in radians
+initial_velocities = [13:1:15];  % Define initial velocities
 
 % Load the Simulink model
 model_name = 'BIKENON';
