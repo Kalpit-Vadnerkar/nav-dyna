@@ -2,8 +2,8 @@ function main()
     % Initialization of parameters
     dt = 0.01;
     total_time = 15;
-    theta_values_array = (1:0.1:10.1) * pi / 180;  % Steering magnitudes in radians
-    c_values_array = [0:25:201]; % Acceleration magnitudes 
+    theta_values_array = (1:0.1:10) * pi / 180;  % Steering magnitudes in radians
+    c_values_array = [0:50:200]; % Acceleration magnitudes 
     maneuvers = {'SLS', 'SRS', 'LSL', 'LSR', 'RSL', 'RSR'};
     folder_name = 'Input Maneuvers';
 

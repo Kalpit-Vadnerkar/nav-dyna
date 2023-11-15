@@ -3,9 +3,9 @@ clear; close all;
 
 % Load bike parameters and initial velocities
 BIKEPRE;  % Load the bike parameters
-c_values_array = [0:25:201]; % Acceleration magnitudes 
-theta_values_array = (1:0.1:10.1) * pi/180;  % Steering magnitudes in radians
-initial_velocities = [13:1:15];  % Define initial velocities
+c_values_array = [0:50:200]; % Acceleration magnitudes 
+theta_values_array = (1:0.2:10) * pi/180;  % Steering magnitudes in radians
+initial_velocities = [3:3:15];  % Define initial velocities
 
 % Load the Simulink model
 model_name = 'BIKENON';
@@ -57,7 +57,7 @@ for v_idx = 1:length(initial_velocities)
 
             % Save the simulation results
             result_file_name = ['Velo_' num2str(u0) '_Result_' steer_files(i).name(1:end-10) '.mat'];
-            save(fullfile(result_maneuver_dir, result_file_name), 'u', 'v', 'r', 'xu', 'xy', 'theta', 'force');
+            save(fullfile(result_maneuver_dir, result_file_name), 'u', 'v', 'r', 'xu', 'xy', 'theta', 'force','ay');
             disp(['Simulation completed for ' steer_files(i).name(1:end-10) ' with initial velocity: ' num2str(u0) ' m/s']);
         end
     end
